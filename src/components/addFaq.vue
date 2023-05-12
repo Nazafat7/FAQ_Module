@@ -19,11 +19,9 @@
         <form class="was-validated" @submit.prevent="submitData">
             <div class="form-control mb-3">
                 <label for="validationQuestion" class="form-label"> Question</label>
-                <!-- {{ faqData.faqQuestion }} -->
                 <textarea class="form-control is-invalid"  id="validationQuestion" rows="3" v-model.trim="faqData.faqQuestion" placeholder="Required Question" required ref="descInput"></textarea>
             </div>
             <div class="form-control mb-3">
-                <!-- {{ faqData.faqAnswer }} -->
                 <label ffor="validationAnswer" class="form-label">Answer</label>
                 <textarea class="form-control is-invalid"  id="validationAnswer" rows="3" v-model.trim="faqData.faqAnswer" placeholder="Required Answer" required ref="descInput"></textarea>
             </div>
@@ -62,7 +60,6 @@ mounted(){
   let FAQData = localStorage.getItem('FAQData')
       if(FAQData != null){
         let FAQParse = JSON.parse(FAQData.toString());
-        console.log("MountedJSONParse",FAQParse);
         this.lastId=FAQParse.length;
       }
 },
